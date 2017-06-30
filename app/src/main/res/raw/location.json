@@ -1,505 +1,507 @@
-[{
-    "locId": 29660,
-    "city": "Abidjan",
-    "latitude": 5.3097,
-    "longitude": -4.0127
+{
+  "ville":[{
+  "locId": 29660,
+  "city": "Abidjan",
+  "latitude": 5.3097,
+  "longitude": -4.0127
+},
+  {
+    "locId": 69463,
+    "city": "Yamoussoukro",
+    "latitude": 6.8205,
+    "longitude": -5.2767
   },
-    {
-      "locId": 69463,
-      "city": "Yamoussoukro",
-      "latitude": 6.8205,
-      "longitude": -5.2767
-    },
-    {
-      "locId": 69661,
-      "city": "Daloa",
-      "latitude": 6.8774,
-      "longitude": -6.4502
-    },
-    {
-      "locId": 98049,
-      "city": "Guiglo",
-      "latitude": 6.5437,
-      "longitude": -7.4935
-    },
-    {
-      "locId": 98168,
-      "city": "Yacolidabouo",
-      "latitude": 5.95,
-      "longitude": -6.55
-    },
-    {
-      "locId": 98248,
-      "city": "Toupah",
-      "latitude": 5.3189,
-      "longitude": -4.5655
-    },
-    {
-      "locId": 179953,
-      "city": "Bassa",
-      "latitude": 4.6333,
-      "longitude": -6.9167
-    },
-    {
-      "locId": 180496,
-      "city": "Abengourou",
-      "latitude": 6.7297,
-      "longitude": -3.4964
-    },
-    {
-      "locId": 196322,
-      "city": "San-pédro",
-      "latitude": 4.7485,
-      "longitude": -6.6363
-    },
-    {
-      "locId": 207249,
-      "city": "Bonoua",
-      "latitude": 5.2722,
-      "longitude": -3.6008
-    },
-    {
-      "locId": 207261,
-      "city": "Dabou",
-      "latitude": 5.3206,
-      "longitude": -4.3831
-    },
-    {
-      "locId": 207262,
-      "city": "Azaguié",
-      "latitude": 5.6278,
-      "longitude": -4.0867
-    },
-    {
-      "locId": 207264,
-      "city": "Bingerville",
-      "latitude": 5.3558,
-      "longitude": -3.89
-    },
-    {
-      "locId": 212074,
-      "city": "Grand-bassam",
-      "latitude": 5.2019,
-      "longitude": -3.735
-    },
-    {
-      "locId": 212926,
-      "city": "Aboisso",
-      "latitude": 5.4675,
-      "longitude": -3.2144
-    },
-    {
-      "locId": 212927,
-      "city": "Grand-lahou",
-      "latitude": 5.1367,
-      "longitude": -5.0242
-    },
-    {
-      "locId": 215420,
-      "city": "Port-bouét",
-      "latitude": 5.2556,
-      "longitude": -3.9644
-    },
-    {
-      "locId": 215421,
-      "city": "Treichville",
-      "latitude": 5.3033,
-      "longitude": -4.0092
-    },
-    {
-      "locId": 217584,
-      "city": "Adzopé",
-      "latitude": 6.1069,
-      "longitude": -3.8619
-    },
-    {
-      "locId": 219433,
-      "city": "Agboville",
-      "latitude": 5.928,
-      "longitude": -4.2132
-    },
-    {
-      "locId": 219434,
-      "city": "Sassandra",
-      "latitude": 4.95,
-      "longitude": -6.0833
-    },
-    {
-      "locId": 219440,
-      "city": "Abobo",
-      "latitude": 5.4189,
-      "longitude": -4.0206
-    },
-    {
-      "locId": 219441,
-      "city": "Anyama",
-      "latitude": 5.4958,
-      "longitude": -4.0547
-    },
-    {
-      "locId": 222953,
-      "city": "Sinfra",
-      "latitude": 6.6167,
-      "longitude": -5.9167
-    },
-    {
-      "locId": 231926,
-      "city": "Béttié",
-      "latitude": 6.0757,
-      "longitude": -3.4085
-    },
-    {
-      "locId": 231927,
-      "city": "Dimbokro",
-      "latitude": 6.6468,
-      "longitude": -4.7052
-    },
-    {
-      "locId": 242179,
-      "city": "Bondoukou",
-      "latitude": 8.0333,
-      "longitude": -2.8
-    },
-    {
-      "locId": 242180,
-      "city": "Tabou",
-      "latitude": 4.423,
-      "longitude": -7.3528
-    },
-    {
-      "locId": 242181,
-      "city": "Toumodi",
-      "latitude": 6.55,
-      "longitude": -5.0167
-    },
-    {
-      "locId": 242182,
-      "city": "Bouaké",
-      "latitude": 7.6938,
-      "longitude": -5.0303
-    },
-    {
-      "locId": 243787,
-      "city": "Cocody",
-      "latitude": 5.3489,
-      "longitude": -4.0117
-    },
-    {
-      "locId": 245747,
-      "city": "Lakota",
-      "latitude": 5.8528,
-      "longitude": -5.6883
-    },
-    {
-      "locId": 246463,
-      "city": "Bongo",
-      "latitude": 5.509,
-      "longitude": -3.5477
-    },
-    {
-      "locId": 246537,
-      "city": "Ouangolodougou",
-      "latitude": 9.9684,
-      "longitude": -5.1488
-    },
-    {
-      "locId": 246750,
-      "city": "Plateau",
-      "latitude": 5.3167,
-      "longitude": -4.0333
-    },
-    {
-      "locId": 253339,
-      "city": "Guitry",
-      "latitude": 5.5228,
-      "longitude": -5.2397
-    },
-    {
-      "locId": 255157,
-      "city": "Marcory",
-      "latitude": 5.3047,
-      "longitude": -3.9956
-    },
-    {
-      "locId": 262293,
-      "city": "Man",
-      "latitude": 7.4125,
-      "longitude": -7.5538
-    },
-    {
-      "locId": 273035,
-      "city": "Katiola",
-      "latitude": 8.1333,
-      "longitude": -5.1
-    },
-    {
-      "locId": 275946,
-      "city": "Sikensi",
-      "latitude": 5.6692,
-      "longitude": -4.5703
-    },
-    {
-      "locId": 278497,
-      "city": "Vridi",
-      "latitude": 5.2467,
-      "longitude": -4.0342
-    },
-    {
-      "locId": 280028,
-      "city": "Adiaké",
-      "latitude": 5.2864,
-      "longitude": -3.3075
-    },
-    {
-      "locId": 297451,
-      "city": "Alépé",
-      "latitude": 5.4961,
-      "longitude": -3.6636
-    },
-    {
-      "locId": 299422,
-      "city": "Abata",
-      "latitude": 5.3247,
-      "longitude": -3.9167
-    },
-    {
-      "locId": 301607,
-      "city": "Abadji Doumé",
-      "latitude": 5.3,
-      "longitude": -4.1333
-    },
-    {
-      "locId": 301617,
-      "city": "Port Buet",
-      "latitude": 5.2556,
-      "longitude": -3.9644
-    },
-    {
-      "locId": 303615,
-      "city": "Bouafla",
-      "latitude": 7.2814,
-      "longitude": -5.8294
-    },
-    {
-      "locId": 310311,
-      "city": "Zuénoula",
-      "latitude": 7.4303,
-      "longitude": -6.0505
-    },
-    {
-      "locId": 311212,
-      "city": "Gagnoa",
-      "latitude": 6.1319,
-      "longitude": -5.9506
-    },
-    {
-      "locId": 314958,
-      "city": "Oumé",
-      "latitude": 6.3833,
-      "longitude": -5.4167
-    },
-    {
-      "locId": 316862,
-      "city": "France",
-      "latitude": 5.2042,
-      "longitude": -3.7344
-    },
-    {
-      "locId": 321710,
-      "city": "Tiébissou",
-      "latitude": 7.1631,
-      "longitude": -5.2206
-    },
-    {
-      "locId": 335226,
-      "city": "Koumassi",
-      "latitude": 5.2881,
-      "longitude": -3.9828
-    },
-    {
-      "locId": 337706,
-      "city": "Attiecoubé",
-      "latitude": 5.3453,
-      "longitude": -4.035
-    },
-    {
-      "locId": 342223,
-      "city": "Yamoussoukro",
-      "latitude": 6.8205,
-      "longitude": -5.2767
-    },
-    {
-      "locId": 345199,
-      "city": "Béttié",
-      "latitude": 6.0757,
-      "longitude": -3.4085
-    },
-    {
-      "locId": 345249,
-      "city": "Toupah",
-      "latitude": 5.3189,
-      "longitude": -4.5655
-    },
-    {
-      "locId": 345250,
-      "city": "Bongo",
-      "latitude": 5.509,
-      "longitude": -3.5477
-    },
-    {
-      "locId": 345262,
-      "city": "Ouangolodougou",
-      "latitude": 9.9684,
-      "longitude": -5.1488
-    },
-    {
-      "locId": 346390,
-      "city": "Adjamé",
-      "latitude": 5.3456,
-      "longitude": -3.872
-    },
-    {
-      "locId": 352446,
-      "city": "Koumassi",
-      "latitude": 5.2972,
-      "longitude": -3.9675
-    },
-    {
-      "locId": 364462,
-      "city": "Anyama",
-      "latitude": 5.4946,
-      "longitude": -4.0518
-    },
-    {
-      "locId": 365066,
-      "city": "Kassemblé",
-      "latitude": 5.3151,
-      "longitude": -4.2121
-    },
-    {
-      "locId": 365937,
-      "city": "Dabou",
-      "latitude": 5.3256,
-      "longitude": -4.3769
-    },
-    {
-      "locId": 367409,
-      "city": "Bonoua",
-      "latitude": 5.2725,
-      "longitude": -3.5962
-    },
-    {
-      "locId": 374745,
-      "city": "Songon",
-      "latitude": 5.3078,
-      "longitude": -4.2311
-    },
-    {
-      "locId": 380926,
-      "city": "Grand-bassam",
-      "latitude": 5.2118,
-      "longitude": -3.7388
-    },
-    {
-      "locId": 383532,
-      "city": "Alépé",
-      "latitude": 5.5004,
-      "longitude": -3.6631
-    },
-    {
-      "locId": 384028,
-      "city": "Treichville",
-      "latitude": 5.2881,
-      "longitude": -4.0063
-    },
-    {
-      "locId": 384029,
-      "city": "Bingerville",
-      "latitude": 5.3558,
-      "longitude": -3.8854
-    },
-    {
-      "locId": 393560,
-      "city": "Marcory",
-      "latitude": 5.312,
-      "longitude": -3.9936
-    },
-    {
-      "locId": 413677,
-      "city": "Soubré",
-      "latitude": 5.7838,
-      "longitude": -6.5939
-    },
-    {
-      "locId": 415783,
-      "city": "Plateau",
-      "latitude": 5.3218,
-      "longitude": -4.0197
-    },
-    {
-      "locId": 415784,
-      "city": "Cocody",
-      "latitude": 5.3351,
-      "longitude": -4.0039
-    },
-    {
-      "locId": 415785,
-      "city": "Abobo",
-      "latitude": 5.4161,
-      "longitude": -4.0159
-    },
-    {
-      "locId": 419474,
-      "city": "Adzopé",
-      "latitude": 6.1069,
-      "longitude": -3.8619
-    },
-    {
-      "locId": 552961,
-      "city": "Divo",
-      "latitude": 5.8374,
-      "longitude": -5.3572
-    },
-    {
-      "locId": 687300,
-      "city": "Yopougon",
-      "latitude": 5.3748,
-      "longitude": -4.0867
-    },
-    {
-      "locId": 761575,
-      "city": "Sinfra",
-      "latitude": 6.621,
-      "longitude": -5.9114
-    },
-    {
-      "locId": 782046,
-      "city": "Odienné",
-      "latitude": 9.5051,
-      "longitude": -7.5643
-    },
-    {
-      "locId": 792768,
-      "city": "Korhogo",
-      "latitude": 9.458,
-      "longitude": -5.6296
-    },
-    {
-      "locId": 796038,
-      "city": "Port-bouet",
-      "latitude": 5.2568,
-      "longitude": -3.963
-    },
-    {
-      "locId": 802291,
-      "city": "Vavoua",
-      "latitude": 7.3819,
-      "longitude": -6.4778
-    },
-    {
-      "locId": 817695,
-      "city": "Adiaké",
-      "latitude": 5.2863,
-      "longitude": -3.304
-    }
-  ]
+  {
+    "locId": 69661,
+    "city": "Daloa",
+    "latitude": 6.8774,
+    "longitude": -6.4502
+  },
+  {
+    "locId": 98049,
+    "city": "Guiglo",
+    "latitude": 6.5437,
+    "longitude": -7.4935
+  },
+  {
+    "locId": 98168,
+    "city": "Yacolidabouo",
+    "latitude": 5.95,
+    "longitude": -6.55
+  },
+  {
+    "locId": 98248,
+    "city": "Toupah",
+    "latitude": 5.3189,
+    "longitude": -4.5655
+  },
+  {
+    "locId": 179953,
+    "city": "Bassa",
+    "latitude": 4.6333,
+    "longitude": -6.9167
+  },
+  {
+    "locId": 180496,
+    "city": "Abengourou",
+    "latitude": 6.7297,
+    "longitude": -3.4964
+  },
+  {
+    "locId": 196322,
+    "city": "San-pédro",
+    "latitude": 4.7485,
+    "longitude": -6.6363
+  },
+  {
+    "locId": 207249,
+    "city": "Bonoua",
+    "latitude": 5.2722,
+    "longitude": -3.6008
+  },
+  {
+    "locId": 207261,
+    "city": "Dabou",
+    "latitude": 5.3206,
+    "longitude": -4.3831
+  },
+  {
+    "locId": 207262,
+    "city": "Azaguié",
+    "latitude": 5.6278,
+    "longitude": -4.0867
+  },
+  {
+    "locId": 207264,
+    "city": "Bingerville",
+    "latitude": 5.3558,
+    "longitude": -3.89
+  },
+  {
+    "locId": 212074,
+    "city": "Grand-bassam",
+    "latitude": 5.2019,
+    "longitude": -3.735
+  },
+  {
+    "locId": 212926,
+    "city": "Aboisso",
+    "latitude": 5.4675,
+    "longitude": -3.2144
+  },
+  {
+    "locId": 212927,
+    "city": "Grand-lahou",
+    "latitude": 5.1367,
+    "longitude": -5.0242
+  },
+  {
+    "locId": 215420,
+    "city": "Port-bouét",
+    "latitude": 5.2556,
+    "longitude": -3.9644
+  },
+  {
+    "locId": 215421,
+    "city": "Treichville",
+    "latitude": 5.3033,
+    "longitude": -4.0092
+  },
+  {
+    "locId": 217584,
+    "city": "Adzopé",
+    "latitude": 6.1069,
+    "longitude": -3.8619
+  },
+  {
+    "locId": 219433,
+    "city": "Agboville",
+    "latitude": 5.928,
+    "longitude": -4.2132
+  },
+  {
+    "locId": 219434,
+    "city": "Sassandra",
+    "latitude": 4.95,
+    "longitude": -6.0833
+  },
+  {
+    "locId": 219440,
+    "city": "Abobo",
+    "latitude": 5.4189,
+    "longitude": -4.0206
+  },
+  {
+    "locId": 219441,
+    "city": "Anyama",
+    "latitude": 5.4958,
+    "longitude": -4.0547
+  },
+  {
+    "locId": 222953,
+    "city": "Sinfra",
+    "latitude": 6.6167,
+    "longitude": -5.9167
+  },
+  {
+    "locId": 231926,
+    "city": "Béttié",
+    "latitude": 6.0757,
+    "longitude": -3.4085
+  },
+  {
+    "locId": 231927,
+    "city": "Dimbokro",
+    "latitude": 6.6468,
+    "longitude": -4.7052
+  },
+  {
+    "locId": 242179,
+    "city": "Bondoukou",
+    "latitude": 8.0333,
+    "longitude": -2.8
+  },
+  {
+    "locId": 242180,
+    "city": "Tabou",
+    "latitude": 4.423,
+    "longitude": -7.3528
+  },
+  {
+    "locId": 242181,
+    "city": "Toumodi",
+    "latitude": 6.55,
+    "longitude": -5.0167
+  },
+  {
+    "locId": 242182,
+    "city": "Bouaké",
+    "latitude": 7.6938,
+    "longitude": -5.0303
+  },
+  {
+    "locId": 243787,
+    "city": "Cocody",
+    "latitude": 5.3489,
+    "longitude": -4.0117
+  },
+  {
+    "locId": 245747,
+    "city": "Lakota",
+    "latitude": 5.8528,
+    "longitude": -5.6883
+  },
+  {
+    "locId": 246463,
+    "city": "Bongo",
+    "latitude": 5.509,
+    "longitude": -3.5477
+  },
+  {
+    "locId": 246537,
+    "city": "Ouangolodougou",
+    "latitude": 9.9684,
+    "longitude": -5.1488
+  },
+  {
+    "locId": 246750,
+    "city": "Plateau",
+    "latitude": 5.3167,
+    "longitude": -4.0333
+  },
+  {
+    "locId": 253339,
+    "city": "Guitry",
+    "latitude": 5.5228,
+    "longitude": -5.2397
+  },
+  {
+    "locId": 255157,
+    "city": "Marcory",
+    "latitude": 5.3047,
+    "longitude": -3.9956
+  },
+  {
+    "locId": 262293,
+    "city": "Man",
+    "latitude": 7.4125,
+    "longitude": -7.5538
+  },
+  {
+    "locId": 273035,
+    "city": "Katiola",
+    "latitude": 8.1333,
+    "longitude": -5.1
+  },
+  {
+    "locId": 275946,
+    "city": "Sikensi",
+    "latitude": 5.6692,
+    "longitude": -4.5703
+  },
+  {
+    "locId": 278497,
+    "city": "Vridi",
+    "latitude": 5.2467,
+    "longitude": -4.0342
+  },
+  {
+    "locId": 280028,
+    "city": "Adiaké",
+    "latitude": 5.2864,
+    "longitude": -3.3075
+  },
+  {
+    "locId": 297451,
+    "city": "Alépé",
+    "latitude": 5.4961,
+    "longitude": -3.6636
+  },
+  {
+    "locId": 299422,
+    "city": "Abata",
+    "latitude": 5.3247,
+    "longitude": -3.9167
+  },
+  {
+    "locId": 301607,
+    "city": "Abadji Doumé",
+    "latitude": 5.3,
+    "longitude": -4.1333
+  },
+  {
+    "locId": 301617,
+    "city": "Port Buet",
+    "latitude": 5.2556,
+    "longitude": -3.9644
+  },
+  {
+    "locId": 303615,
+    "city": "Bouafla",
+    "latitude": 7.2814,
+    "longitude": -5.8294
+  },
+  {
+    "locId": 310311,
+    "city": "Zuénoula",
+    "latitude": 7.4303,
+    "longitude": -6.0505
+  },
+  {
+    "locId": 311212,
+    "city": "Gagnoa",
+    "latitude": 6.1319,
+    "longitude": -5.9506
+  },
+  {
+    "locId": 314958,
+    "city": "Oumé",
+    "latitude": 6.3833,
+    "longitude": -5.4167
+  },
+  {
+    "locId": 316862,
+    "city": "France",
+    "latitude": 5.2042,
+    "longitude": -3.7344
+  },
+  {
+    "locId": 321710,
+    "city": "Tiébissou",
+    "latitude": 7.1631,
+    "longitude": -5.2206
+  },
+  {
+    "locId": 335226,
+    "city": "Koumassi",
+    "latitude": 5.2881,
+    "longitude": -3.9828
+  },
+  {
+    "locId": 337706,
+    "city": "Attiecoubé",
+    "latitude": 5.3453,
+    "longitude": -4.035
+  },
+  {
+    "locId": 342223,
+    "city": "Yamoussoukro",
+    "latitude": 6.8205,
+    "longitude": -5.2767
+  },
+  {
+    "locId": 345199,
+    "city": "Béttié",
+    "latitude": 6.0757,
+    "longitude": -3.4085
+  },
+  {
+    "locId": 345249,
+    "city": "Toupah",
+    "latitude": 5.3189,
+    "longitude": -4.5655
+  },
+  {
+    "locId": 345250,
+    "city": "Bongo",
+    "latitude": 5.509,
+    "longitude": -3.5477
+  },
+  {
+    "locId": 345262,
+    "city": "Ouangolodougou",
+    "latitude": 9.9684,
+    "longitude": -5.1488
+  },
+  {
+    "locId": 346390,
+    "city": "Adjamé",
+    "latitude": 5.3456,
+    "longitude": -3.872
+  },
+  {
+    "locId": 352446,
+    "city": "Koumassi",
+    "latitude": 5.2972,
+    "longitude": -3.9675
+  },
+  {
+    "locId": 364462,
+    "city": "Anyama",
+    "latitude": 5.4946,
+    "longitude": -4.0518
+  },
+  {
+    "locId": 365066,
+    "city": "Kassemblé",
+    "latitude": 5.3151,
+    "longitude": -4.2121
+  },
+  {
+    "locId": 365937,
+    "city": "Dabou",
+    "latitude": 5.3256,
+    "longitude": -4.3769
+  },
+  {
+    "locId": 367409,
+    "city": "Bonoua",
+    "latitude": 5.2725,
+    "longitude": -3.5962
+  },
+  {
+    "locId": 374745,
+    "city": "Songon",
+    "latitude": 5.3078,
+    "longitude": -4.2311
+  },
+  {
+    "locId": 380926,
+    "city": "Grand-bassam",
+    "latitude": 5.2118,
+    "longitude": -3.7388
+  },
+  {
+    "locId": 383532,
+    "city": "Alépé",
+    "latitude": 5.5004,
+    "longitude": -3.6631
+  },
+  {
+    "locId": 384028,
+    "city": "Treichville",
+    "latitude": 5.2881,
+    "longitude": -4.0063
+  },
+  {
+    "locId": 384029,
+    "city": "Bingerville",
+    "latitude": 5.3558,
+    "longitude": -3.8854
+  },
+  {
+    "locId": 393560,
+    "city": "Marcory",
+    "latitude": 5.312,
+    "longitude": -3.9936
+  },
+  {
+    "locId": 413677,
+    "city": "Soubré",
+    "latitude": 5.7838,
+    "longitude": -6.5939
+  },
+  {
+    "locId": 415783,
+    "city": "Plateau",
+    "latitude": 5.3218,
+    "longitude": -4.0197
+  },
+  {
+    "locId": 415784,
+    "city": "Cocody",
+    "latitude": 5.3351,
+    "longitude": -4.0039
+  },
+  {
+    "locId": 415785,
+    "city": "Abobo",
+    "latitude": 5.4161,
+    "longitude": -4.0159
+  },
+  {
+    "locId": 419474,
+    "city": "Adzopé",
+    "latitude": 6.1069,
+    "longitude": -3.8619
+  },
+  {
+    "locId": 552961,
+    "city": "Divo",
+    "latitude": 5.8374,
+    "longitude": -5.3572
+  },
+  {
+    "locId": 687300,
+    "city": "Yopougon",
+    "latitude": 5.3748,
+    "longitude": -4.0867
+  },
+  {
+    "locId": 761575,
+    "city": "Sinfra",
+    "latitude": 6.621,
+    "longitude": -5.9114
+  },
+  {
+    "locId": 782046,
+    "city": "Odienné",
+    "latitude": 9.5051,
+    "longitude": -7.5643
+  },
+  {
+    "locId": 792768,
+    "city": "Korhogo",
+    "latitude": 9.458,
+    "longitude": -5.6296
+  },
+  {
+    "locId": 796038,
+    "city": "Port-bouet",
+    "latitude": 5.2568,
+    "longitude": -3.963
+  },
+  {
+    "locId": 802291,
+    "city": "Vavoua",
+    "latitude": 7.3819,
+    "longitude": -6.4778
+  },
+  {
+    "locId": 817695,
+    "city": "Adiaké",
+    "latitude": 5.2863,
+    "longitude": -3.304
+  }
+]
+}
