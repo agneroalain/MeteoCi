@@ -18,8 +18,37 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        android:fitsSystemWindows="false"
+
+        >
+        <!--app:headerLayout="@layout/nav_header_main"-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:hint="Rechercher une localité"
+                android:drawableLeft="@drawable/ic_search_black_24dp">
+                <requestFocus />
+            </EditText>
+            <ListView
+                android:layout_weight="7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="start"
+                android:choiceMode="singleChoice"
+                android:divider="#666"
+                android:dividerHeight="1dp"
+                android:paddingLeft="15sp"
+                android:paddingRight="15sp"
+                android:id="@+id/list_view_inside_nav"/>
+        </LinearLayout>
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

@@ -2,12 +2,15 @@ package com.bravaafreeca.meteoci;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
+
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -17,6 +20,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,20 +31,48 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String CURRENT_TAG = "principal";
+    ListView listmenu;
+    ArrayList<String> listStringMenu = new ArrayList<String>();
+    ArrayList<Localisation> localisationMenu=new ArrayList<Localisation>();
+
     //static TextView title_textview;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -91,6 +124,34 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
+
+
+        loadMenu();
+        listmenu=(ListView) findViewById(R.id.list_view_inside_nav);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,
+                android.R.layout.simple_list_item_1, this.listStringMenu);
+        listmenu.setAdapter(adapter);
+        listmenu.setTextFilterEnabled(true);
+
+        listmenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int pos, long id) {
+
+
+            }
+        });
+        EditText myFilter = (EditText) findViewById(R.id.filter);
+        myFilter.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s.toString());
+            }
+        });
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -187,7 +248,63 @@ public class MainActivity extends AppCompatActivity
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
     }
+//    public ArrayList<Localisation> loadLocalisation() throws IOException, JSONException {
+//       final Type REVIEW_TYPE = new TypeToken<ArrayList<Localisation>>() {}.getType();
+//        JSONResourceReader jr =new JSONResourceReader(getResources(),R.raw.location);
+//        return new Gson().fromJson(jr.getString(),REVIEW_TYPE);
+//    }
+    public void loadMenu()
+    {
+        Resources res = getResources();
+        InputStream is = res.openRawResource(R.raw.location);
+        Scanner scanner =new Scanner(is);
+        StringBuilder builder = new StringBuilder();
+        while(scanner.hasNextLine())
+        {
+            builder.append(scanner.nextLine());
+        }
+        parserJson(builder.toString());
+    }
+    public void parserJson(String json)
+    {
+        try {
+            StringBuilder builder =new StringBuilder();
+            JSONObject root = new JSONObject(json);
+            JSONArray villes= root.getJSONArray("ville");
+            for (int i=0;i<villes.length();i++)
+            {
+                Localisation locat =new Localisation(villes.getJSONObject(i).getInt("locId"),villes.getJSONObject(i).getString("city"),villes.getJSONObject(i).getDouble("latitude"),villes.getJSONObject(i).getDouble("longitude"));
+                this.localisationMenu.add(locat);
+                this.listStringMenu.add(villes.getJSONObject(i).getString("city"));
+            }
+        }catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
 
+    }
+//    public class MenuAdapter extends ArrayAdapter<Localisation>
+//    {
+//        Context context;
+//        int layoutResourceId;
+//        ArrayList<Localisation> data = null;
+//        TextView city;
+//
+//        public MenuAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Localisation> objects) {
+//            super(context, resource, objects);
+//            this.layoutResourceId = resource;
+//            this.context = context;
+//            this.data = (ArrayList) objects;
+//        }
+//
+//        @NonNull
+//        @Override
+//        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//
+//            View row = convertView;
+//            Localisation locat = null;
+//        }
+//    }
 
 }
 
