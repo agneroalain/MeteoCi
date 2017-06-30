@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
 
-
+// chargement des ville dans le menu
         loadMenu();
         listmenu=(ListView) findViewById(R.id.list_view_inside_nav);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,
@@ -139,6 +139,7 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+        //filter de rechercher un ville dans la liste
         EditText myFilter = (EditText) findViewById(R.id.filter);
         myFilter.addTextChangedListener(new TextWatcher() {
 
@@ -152,6 +153,7 @@ public class MainActivity extends AppCompatActivity
                 adapter.getFilter().filter(s.toString());
             }
         });
+
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -253,6 +255,7 @@ public class MainActivity extends AppCompatActivity
 //        JSONResourceReader jr =new JSONResourceReader(getResources(),R.raw.location);
 //        return new Gson().fromJson(jr.getString(),REVIEW_TYPE);
 //    }
+    //fonction de chagement du menu (list des villes)
     public void loadMenu()
     {
         Resources res = getResources();
@@ -265,6 +268,8 @@ public class MainActivity extends AppCompatActivity
         }
         parserJson(builder.toString());
     }
+    //fonction de chagement du menu (recuperation des donné dans le fichier json)
+
     public void parserJson(String json)
     {
         try {
