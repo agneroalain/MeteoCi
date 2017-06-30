@@ -16,6 +16,7 @@ public class Prevision  {
     private String api;
     private int jour;
     private int clouds;
+    private String icon;
 
     public Prevision(){
 
@@ -70,4 +71,11 @@ public class Prevision  {
         this.clouds = clouds;
     }
 
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 }

@@ -26,7 +26,7 @@
                 android:id= "@+id/jour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="viewStart"
                 android:textStyle="normal|bold"
                 android:textSize="18sp" />
 
@@ -34,25 +34,25 @@
                 android:id= "@+id/libelle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textAlignment="viewStart" />
 
             <TextView
                 android:id= "@+id/temp_max"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textAlignment="viewStart" />
 
             <TextView
                 android:id= "@+id/temp_min"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textAlignment="viewStart" />
 
             <TextView
                 android:id= "@+id/clouds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center" />
+                android:textAlignment="viewStart" />
         </LinearLayout>
     </LinearLayout>
 

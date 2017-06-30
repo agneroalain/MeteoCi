@@ -193,6 +193,7 @@ public class FragmentPrevision extends Fragment {
                         prevision.setClouds(previsionArray.getJSONObject(i).getInt("clouds"));
                         prevision.setTemp_max(previsionArray.getJSONObject(i).getJSONObject("temp").getDouble("max"));
                         prevision.setTemp_max(previsionArray.getJSONObject(i).getJSONObject("temp").getDouble("min"));
+                        prevision.setIcon(previsionArray.getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("icon"));
                         previsions.add(prevision);
                     }
 

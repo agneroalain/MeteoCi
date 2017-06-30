@@ -60,42 +60,74 @@ public class customAdapter extends ArrayAdapter<Prevision> {
             prevision.clouds = (TextView)row.findViewById(R.id.clouds);
             prevision.icone = (ImageView) row.findViewById(R.id.icone_temp);
 
+
+            prevision.jour.setTextColor((Color.parseColor("#FFFFFF")));
+            prevision.temp_min.setTextColor((Color.parseColor("#FFFFFF")));
+            prevision.temp_max.setTextColor((Color.parseColor("#FFFFFF")));
+            prevision.clouds.setTextColor((Color.parseColor("#FFFFFF")));
+            prevision.libelle.setTextColor((Color.parseColor("#FFFFFF")));
+
+            Prevision item = data.get(position);
+
             Calendar c = Calendar.getInstance();
             int seconds = c.get(Calendar.SECOND);
             int hour = c.get(Calendar.HOUR_OF_DAY);
             if(hour > 18 || hour < 6){
-                    prevision.jour.setTextColor((Color.parseColor("#FFFFFF")));
-                    prevision.temp_min.setTextColor((Color.parseColor("#FFFFFF")));
-                    prevision.temp_max.setTextColor((Color.parseColor("#FFFFFF")));
-                    prevision.clouds.setTextColor((Color.parseColor("#FFFFFF")));
-                    prevision.libelle.setTextColor((Color.parseColor("#FFFFFF")));
 
+                switch (item.getIcon()){
+                    case "04n" :
+                        prevision.icone.setImageResource(R.drawable.c13);
+                        break;
+                    case "10n" :
+                        prevision.icone.setImageResource(R.drawable.n12);
+                        break;
+                    case "03n" :
+                        prevision.icone.setImageResource(R.drawable.c13);
+                        break;
+
+                    case "09n" :
+                        prevision.icone.setImageResource(R.drawable.c14);
+                        break;
+
+                    case "11n" :
+                        prevision.icone.setImageResource(R.drawable.orage);
+                        break;
+
+                    default:
+                        prevision.icone.setImageResource(R.drawable.j1);
+                        break;
+                }
             }
             else{
-                Prevision item = data.get(position);
-                prevision.jour.setText(convertDate(item.getJour()));
+
+                prevision.jour.setText(convertDate());
                 prevision.libelle.setText(item.getLibelle());
                 prevision.temp_max.setText(String.valueOf("Temperature maximale : " + item.getTemp_max()+"°"));
                 prevision.temp_min.setText(String.valueOf("Temperature minimale : " + item.getTemp_min() + "°"));
                 prevision.clouds.setText(String.valueOf("Couvert à " + item.getClouds() + "%"));
 
-                switch (item.getLibelle()){
-                    case "nuageux" :
-                        if(item.getClouds() < 20) {
+                switch (item.getIcon()){
+                    case "04d" :
+                        prevision.icone.setImageResource(R.drawable.c13);
+                    break;
+                    case "10d" :
+                        prevision.icone.setImageResource(R.drawable.j6);
+                        break;
+                        case "03d" :
+                        prevision.icone.setImageResource(R.drawable.c13);
+                            break;
+
+                    case "09d" :
+                        prevision.icone.setImageResource(R.drawable.c14);
+                        break;
+
+                    case "11d" :
+                        prevision.icone.setImageResource(R.drawable.orage);
+                        break;
+
+                        default:
                             prevision.icone.setImageResource(R.drawable.j1);
-                        }
-                        else if(item.getClouds() < 40){
-                            prevision.icone.setImageResource(R.drawable.j2);
-                        }
-                        else if(item.getClouds() < 60){
-                            prevision.icone.setImageResource(R.drawable.j3);
-                        }
-                        else if(item.getClouds() < 80){
-                            prevision.icone.setImageResource(R.drawable.j4);
-                        }
-                        else {
-                            prevision.icone.setImageResource(R.drawable.c13);
-                        }
+                            break;
                 }
             }
             row.setTag(prevision);
@@ -112,9 +144,9 @@ public class customAdapter extends ArrayAdapter<Prevision> {
         return row;
     }
 
-    public String convertDate(int time){
+    public String convertDate(){
         //calcul de la date
-        Date dateObj = new Date(time);
+        Date dateObj = new Date();
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String text = df.format(dateObj);
 
