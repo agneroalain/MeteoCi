@@ -39,9 +39,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
+
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -154,7 +152,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private Fragment getfragmentPrincipal() {
@@ -190,6 +188,11 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.map_action) {
+            Intent intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
+
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -219,7 +222,7 @@ public class MainActivity extends AppCompatActivity
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    public Action getIndexApiAction() {
+   /* public Action getIndexApiAction() {
         Thing object = new Thing.Builder()
                 .setName("Main Page") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.
@@ -229,7 +232,7 @@ public class MainActivity extends AppCompatActivity
                 .setObject(object)
                 .setActionStatus(Action.STATUS_TYPE_COMPLETED)
                 .build();
-    }
+    }*/
 
     @Override
     public void onStart() {
@@ -237,8 +240,8 @@ public class MainActivity extends AppCompatActivity
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+//        client.connect();
+//        AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
 
     @Override
@@ -247,8 +250,8 @@ public class MainActivity extends AppCompatActivity
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
+//        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+//        client.disconnect();
     }
 //    public ArrayList<Localisation> loadLocalisation() throws IOException, JSONException {
 //       final Type REVIEW_TYPE = new TypeToken<ArrayList<Localisation>>() {}.getType();

@@ -9,4 +9,9 @@
         android:orderInCategory="101"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/map_action"
+
+        android:title="Carte"
+        android:orderInCategory="102" />
 </menu>
