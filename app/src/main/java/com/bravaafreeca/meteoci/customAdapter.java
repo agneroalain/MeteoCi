@@ -72,7 +72,11 @@ public class customAdapter extends ArrayAdapter<Prevision> {
             Calendar c = Calendar.getInstance();
             int seconds = c.get(Calendar.SECOND);
             int hour = c.get(Calendar.HOUR_OF_DAY);
-            if(hour > 18 || hour < 6){
+            prevision.jour.setText(convertDate());
+            prevision.libelle.setText(item.getLibelle());
+            prevision.temp_max.setText(String.valueOf("Temperature maximale : " + item.getTemp_max()+"°"));
+            prevision.temp_min.setText(String.valueOf("Temperature minimale : " + item.getTemp_min() + "°"));
+            prevision.clouds.setText(String.valueOf("Couvert à " + item.getClouds() + "%"));
 
                 switch (item.getIcon()){
                     case "04n" :
@@ -93,29 +97,15 @@ public class customAdapter extends ArrayAdapter<Prevision> {
                         prevision.icone.setImageResource(R.drawable.orage);
                         break;
 
-                    default:
-                        prevision.icone.setImageResource(R.drawable.j1);
-                        break;
-                }
-            }
-            else{
-
-                prevision.jour.setText(convertDate());
-                prevision.libelle.setText(item.getLibelle());
-                prevision.temp_max.setText(String.valueOf("Temperature maximale : " + item.getTemp_max()+"°"));
-                prevision.temp_min.setText(String.valueOf("Temperature minimale : " + item.getTemp_min() + "°"));
-                prevision.clouds.setText(String.valueOf("Couvert à " + item.getClouds() + "%"));
-
-                switch (item.getIcon()){
                     case "04d" :
                         prevision.icone.setImageResource(R.drawable.c13);
-                    break;
+                        break;
                     case "10d" :
                         prevision.icone.setImageResource(R.drawable.j6);
                         break;
-                        case "03d" :
+                    case "03d" :
                         prevision.icone.setImageResource(R.drawable.c13);
-                            break;
+                        break;
 
                     case "09d" :
                         prevision.icone.setImageResource(R.drawable.c14);
@@ -125,11 +115,16 @@ public class customAdapter extends ArrayAdapter<Prevision> {
                         prevision.icone.setImageResource(R.drawable.orage);
                         break;
 
-                        default:
-                            prevision.icone.setImageResource(R.drawable.j1);
-                            break;
+                    default:
+                        prevision.icone.setImageResource(R.drawable.j1);
+                        break;
                 }
-            }
+
+
+
+
+
+
             row.setTag(prevision);
         }
         else

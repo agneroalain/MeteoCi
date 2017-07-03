@@ -7,52 +7,48 @@
     android:padding="10dp">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/icone_temp"
             android:layout_width="79dp"
             android:layout_height="70dp"
-            app:srcCompat="@drawable/j1"
-            android:id="@+id/icone_temp" />
+            app:srcCompat="@drawable/j1" />
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:id= "@+id/jour"
+                android:id="@+id/jour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:textStyle="normal|bold"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
 
             <TextView
-                android:id= "@+id/libelle"
+                android:id="@+id/libelle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart" />
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:id= "@+id/temp_max"
+                android:id="@+id/temp_max"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart" />
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:id= "@+id/temp_min"
+                android:id="@+id/temp_min"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart" />
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:id= "@+id/clouds"
+                android:id="@+id/clouds"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
 

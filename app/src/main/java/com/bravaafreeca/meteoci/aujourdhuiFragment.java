@@ -49,6 +49,7 @@ public class aujourdhuiFragment extends Fragment {
     public static TextView windSpeed_textview;
     public static TextView precipitation_textview;
     public static TextView conseil;
+    public static TextView humidite;
     public static ImageView image;
     public  static FrameLayout background;
 
@@ -101,6 +102,7 @@ public class aujourdhuiFragment extends Fragment {
         precipitation_textview = (TextView) rootView.findViewById(R.id.textView_precipitation);
         image = (ImageView) rootView.findViewById(R.id.image);
         conseil = (TextView) rootView.findViewById(R.id.conseil);
+        humidite = (TextView) rootView.findViewById(R.id.humidite);
 
 
         Calendar c = Calendar.getInstance();
@@ -110,27 +112,23 @@ public class aujourdhuiFragment extends Fragment {
         if(hour > 6 && hour < 12 ){
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
                 background.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan2));
-                image.setImageResource(R.drawable.clear);
             }
             //background.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.abidjan2, null));
         }
         else if(hour > 12 && hour < 18 ){
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
                 background.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan));
-                image.setImageResource(R.drawable.clear);
             }
         }
         else{
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-                background.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan3));
-                image.setImageResource(R.drawable.night_clear);
             }
             conseil.setTextColor(Color.parseColor("#FFFFFF"));
         }
 
 
             DownloadTask task = new DownloadTask();
-            task.execute("http://samples.openweathermap.org/data/2.5/weather?lat=5.3096600&lon=-4.0126600&appid=f2df44ac14f938f5a4ad68434f12d383");
+                task.execute("http://api.openweathermap.org/data/2.5/weather?lat=5.3096600&lon=-4.0126600&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
 
         return rootView;
     }

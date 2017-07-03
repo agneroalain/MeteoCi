@@ -60,11 +60,58 @@ public class DownloadTask extends AsyncTask<String,Void,String>{
             double speed = Double.parseDouble(wind.getString("speed"));
             String description = (String) weather.getString("description");
             aujourdhuiFragment.temp_textview.setText(String.valueOf(temperatureInt + "°"));
-            aujourdhuiFragment.desc_textview.setText(getTranslateDesc(description));
+            aujourdhuiFragment.desc_textview.setText(description);
             aujourdhuiFragment.precipitation_textview.setText(String.valueOf("precipitation : 100mm"));
-            aujourdhuiFragment.windSpeed_textview.setText(String.valueOf("Vitesse du vent : " + speed));
-            //String ville = jsonObject.getString("place");
-            //Log.d("VILLE",ville);
+            aujourdhuiFragment.windSpeed_textview.setText(String.valueOf("Vitesse du vent : " + speed + "m/s"));
+            aujourdhuiFragment.ville_textview.setText(jsonObject.getString("name") + ", " + jsonObject.getJSONObject("sys").getString("country"));
+            aujourdhuiFragment.humidite.setText("humidité : " + main.getString("humidity") + "%");
+            String icon = (String) weather.getString("icon");
+            switch (icon){
+                case "01n" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.moon);
+                break;
+                case "02n" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.n2);
+                    break;
+                case "03n" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.n2);
+                    break;
+                case "04n" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.d4);
+                    break;
+                case "09n" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.n9);
+                    break;
+                case "10n" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.n10);
+                    break;
+                case "50d" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.d50);
+                    break;
+                case "11d" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.orage);
+                    break;
+                case "01d" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.sun);
+                    break;
+                case "02d" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.d2);
+                    break;
+                case "03d" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.d3);
+                    break;
+                case "04d" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.d4);
+                    break;
+                case "09d" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.d9);
+                    break;
+                case "10d" :
+                    aujourdhuiFragment.image.setImageResource(R.drawable.d10);
+                    break;
+               default: aujourdhuiFragment.image.setImageResource(R.drawable.sun);
+                   break;
+            }
 
             Log.d("TEMPERATURE", String.valueOf(temperature));
         } catch (Exception e) {
@@ -73,16 +120,6 @@ public class DownloadTask extends AsyncTask<String,Void,String>{
     }
 
 
-    protected  String getTranslateDesc(String description){
-        String translation = "";
-        switch (description){
-            case "clear sky":
-                translation = "Ciel degagé";
-                break;
-            default:
-                translation = "non definie";
-        }
-        return translation;
-    }
+
 
 }
