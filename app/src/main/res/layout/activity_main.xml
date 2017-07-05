@@ -25,7 +25,19 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:id="@+id/maposition"
+                style="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_bright"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:text="Ma position"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             <EditText
                 android:id="@+id/filter"

@@ -1,6 +1,7 @@
 package com.bravaafreeca.meteoci;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -35,9 +36,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.gson.Gson;
@@ -69,7 +72,7 @@ public class MainActivity extends AppCompatActivity
     ListView listmenu;
     ArrayList<String> listStringMenu = new ArrayList<String>();
     ArrayList<Localisation> localisationMenu=new ArrayList<Localisation>();
-
+    DrawerLayout drawer;
     //static TextView title_textview;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -102,16 +105,16 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -132,8 +135,18 @@ public class MainActivity extends AppCompatActivity
 
         listmenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int pos, long id) {
+                Toast.makeText(getApplication(),"Source de donnée manquante",Toast.LENGTH_LONG).show();
 
+                drawer.closeDrawers();
+            }
+        });
 
+        Button btnpos=(Button)findViewById(R.id.maposition);
+        btnpos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplication(),"Données position manquantes",Toast.LENGTH_LONG).show();
+                drawer.closeDrawers();
             }
         });
         //filter de rechercher un ville dans la liste
