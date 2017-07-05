@@ -12,12 +12,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.security.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.StringTokenizer;
+import java.util.TimeZone;
 
 /**
  * Created by nnbbbbbbbnn on 29/06/2017.
@@ -72,7 +75,7 @@ public class customAdapter extends ArrayAdapter<Prevision> {
             Calendar c = Calendar.getInstance();
             int seconds = c.get(Calendar.SECOND);
             int hour = c.get(Calendar.HOUR_OF_DAY);
-            prevision.jour.setText(convertDate());
+            prevision.jour.setText(getDateCurrentTimeZone(item.getJour()));
             prevision.libelle.setText(item.getLibelle());
             prevision.temp_max.setText(String.valueOf("Temperature maximale : " + item.getTemp_max()+"°"));
             prevision.temp_min.setText(String.valueOf("Temperature minimale : " + item.getTemp_min() + "°"));
@@ -139,13 +142,18 @@ public class customAdapter extends ArrayAdapter<Prevision> {
         return row;
     }
 
-    public String convertDate(){
-        //calcul de la date
-        Date dateObj = new Date();
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        String text = df.format(dateObj);
-
-        return  text;
+    public  String getDateCurrentTimeZone(long timestamp) {
+        try{
+            Calendar calendar = Calendar.getInstance();
+            TimeZone tz = TimeZone.getDefault();
+            calendar.setTimeInMillis(timestamp * 1000);
+            calendar.add(Calendar.MILLISECOND, tz.getOffset(calendar.getTimeInMillis()));
+            SimpleDateFormat sdf = new SimpleDateFormat("EEE, d MMM yyyy");
+            Date currenTimeZone = (Date) calendar.getTime();
+            return sdf.format(currenTimeZone);
+        }catch (Exception e) {
+        }
+        return "";
     }
 
     private class PrevisionHolder {

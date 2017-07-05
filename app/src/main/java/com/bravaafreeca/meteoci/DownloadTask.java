@@ -61,7 +61,7 @@ public class DownloadTask extends AsyncTask<String,Void,String>{
             String description = (String) weather.getString("description");
             aujourdhuiFragment.temp_textview.setText(String.valueOf(temperatureInt + "°"));
             aujourdhuiFragment.desc_textview.setText(description);
-            aujourdhuiFragment.precipitation_textview.setText(String.valueOf("precipitation : 100mm"));
+            aujourdhuiFragment.pression.setText(String.valueOf("Pression atmosphérique : " + main.getString("pressure") + "hPa"));
             aujourdhuiFragment.windSpeed_textview.setText(String.valueOf("Vitesse du vent : " + speed + "m/s"));
             aujourdhuiFragment.ville_textview.setText(jsonObject.getString("name") + ", " + jsonObject.getJSONObject("sys").getString("country"));
             aujourdhuiFragment.humidite.setText("humidité : " + main.getString("humidity") + "%");

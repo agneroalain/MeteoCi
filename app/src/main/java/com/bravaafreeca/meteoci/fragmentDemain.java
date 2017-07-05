@@ -1,12 +1,20 @@
 package com.bravaafreeca.meteoci;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 
 /**
@@ -22,10 +30,17 @@ public class fragmentDemain extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    public static View rootView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    public static TextView ville_textview;
+    public static TextView temp_textview;
+    public static TextView desc_textview;
+
+    public static ImageView image;
+    public  static FrameLayout background;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,9 +79,42 @@ public class fragmentDemain extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_demain, container, false);
+        rootView = inflater.inflate(R.layout.fragment_aujourdhui,container,false);
+
+
+        ville_textview = (TextView) rootView.findViewById(R.id.textView_Ville);
+        temp_textview = (TextView) rootView.findViewById(R.id.textView_Temp);
+        desc_textview = (TextView) rootView.findViewById(R.id.textView_description);
+        image = (ImageView) rootView.findViewById(R.id.image);
+
+
+        Calendar c = Calendar.getInstance();
+        int seconds = c.get(Calendar.SECOND);
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        background = (FrameLayout) rootView.findViewById(R.id.bck_today);
+        if(hour > 6 && hour < 12 ){
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
+                background.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan2));
+            }
+            //background.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.abidjan2, null));
+        }
+        else if(hour > 12 && hour < 18 ){
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
+                background.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan));
+            }
+        }
+        else{
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
+            }
+        }
+
+
+        DownloadTask task = new DownloadTask();
+        task.execute("http://api.openweathermap.org/data/2.5/weather?lat=5.3096600&lon=-4.0126600&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
+
+        return rootView;
+        // Inflate the layout for this fragment
     }
 
     // TODO: Rename method, update argument and hook method into UI event

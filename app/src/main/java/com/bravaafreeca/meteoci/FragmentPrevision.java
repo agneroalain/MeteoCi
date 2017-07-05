@@ -159,7 +159,7 @@ public class FragmentPrevision extends Fragment {
                 URL url;
                 HttpURLConnection urlConnection = null;
                 try {
-                    url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?lat=5.3096600&lon=-4.0126600&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
+                    url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?lat=5.3096600&lon=-4.0126600&cnt=10&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
                     urlConnection = (HttpURLConnection) url.openConnection();
                     InputStream in = urlConnection.getInputStream();
                     InputStreamReader reader = new InputStreamReader(in);
@@ -188,11 +188,11 @@ public class FragmentPrevision extends Fragment {
                     ArrayList<Prevision> previsions = new ArrayList<Prevision>();
                     for(int i = 0; i< previsionArray.length(); i++){
                         Prevision prevision = new Prevision();
-                        prevision.setJour(previsionArray.getJSONObject(i).getInt("dt"));
+                        prevision.setJour(previsionArray.getJSONObject(i).getLong("dt"));
                         prevision.setLibelle(previsionArray.getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description"));
                         prevision.setClouds(previsionArray.getJSONObject(i).getInt("clouds"));
                         prevision.setTemp_max(previsionArray.getJSONObject(i).getJSONObject("temp").getDouble("max"));
-                        prevision.setTemp_max(previsionArray.getJSONObject(i).getJSONObject("temp").getDouble("min"));
+                        prevision.setTemp_min(previsionArray.getJSONObject(i).getJSONObject("temp").getDouble("min"));
                         prevision.setIcon(previsionArray.getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("icon"));
                         previsions.add(prevision);
                     }

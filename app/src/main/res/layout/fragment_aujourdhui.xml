@@ -95,16 +95,16 @@
                         android:padding="20dp"
                         android:text="DETAILS"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/background_light"
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/textView_precipitation"
+                        android:id="@+id/precipitation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="Precipitation : "
-                        android:textColor="@color/colorPrimaryDark" />
+                        android:textColor="@android:color/background_light" />
 
                     <TextView
                         android:id="@+id/textView_windSpeed"
@@ -112,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="Vitesse du vent : "
-                        android:textColor="@color/colorPrimaryDark" />
+                        android:textColor="@android:color/background_light" />
 
                     <TextView
                         android:id="@+id/humidite"
@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="humidité : "
-                        android:textColor="@color/colorPrimaryDark" />
+                        android:textColor="@android:color/background_light" />
 
                     <TextView
                         android:id="@+id/conseil"
@@ -130,7 +130,7 @@
                         android:padding="20dp"
                         android:text="Nous vous conseillons de quand même sortir couvert car le temps risque de se rafraichir dans la soirée ! Egalement emporter un parapluie une légère pluie n'est pas à ecarter !"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/background_light"
                         android:textSize="14sp" />
                 </LinearLayout>
 

@@ -39,15 +39,18 @@ public class aujourdhuiFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     public static View rootView;
+    public static Double lng = -4.0126600;
+    public static Double lat = 5.3096600;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     public static TextView ville_textview;
+    public static TextView pression;
     public static TextView temp_textview;
     public static TextView desc_textview;
     public static TextView windSpeed_textview;
-    public static TextView precipitation_textview;
+    //public static TextView precipitation_textview;
     public static TextView conseil;
     public static TextView humidite;
     public static ImageView image;
@@ -99,7 +102,7 @@ public class aujourdhuiFragment extends Fragment {
         temp_textview = (TextView) rootView.findViewById(R.id.textView_Temp);
         desc_textview = (TextView) rootView.findViewById(R.id.textView_description);
         windSpeed_textview = (TextView) rootView.findViewById(R.id.textView_windSpeed);
-        precipitation_textview = (TextView) rootView.findViewById(R.id.textView_precipitation);
+        pression = (TextView) rootView.findViewById(R.id.precipitation);
         image = (ImageView) rootView.findViewById(R.id.image);
         conseil = (TextView) rootView.findViewById(R.id.conseil);
         humidite = (TextView) rootView.findViewById(R.id.humidite);
@@ -128,7 +131,7 @@ public class aujourdhuiFragment extends Fragment {
 
 
             DownloadTask task = new DownloadTask();
-                task.execute("http://api.openweathermap.org/data/2.5/weather?lat=5.3096600&lon=-4.0126600&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
+                task.execute("http://api.openweathermap.org/data/2.5/weather?lat="+ lat +"&lon="+ lng +"&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
 
         return rootView;
     }

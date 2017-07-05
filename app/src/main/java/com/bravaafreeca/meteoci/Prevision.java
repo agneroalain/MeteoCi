@@ -1,6 +1,7 @@
 package com.bravaafreeca.meteoci;
 
 import android.database.DataSetObserver;
+import android.os.StrictMode;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
@@ -14,7 +15,7 @@ public class Prevision  {
     private double temp_max;
     private double temp_min;
     private String api;
-    private int jour;
+    private Long jour;
     private int clouds;
     private String icon;
 
@@ -42,7 +43,7 @@ public class Prevision  {
         return api;
     }
 
-    public int getJour() {
+    public Long getJour() {
         return jour;
     }
 
@@ -63,7 +64,7 @@ public class Prevision  {
         this.api = api;
     }
 
-    public void setJour(int jour) {
+    public void setJour(Long jour) {
         this.jour = jour;
     }
 
@@ -78,4 +79,6 @@ public class Prevision  {
     public void setIcon(String icon) {
         this.icon = icon;
     }
+
+
 }
