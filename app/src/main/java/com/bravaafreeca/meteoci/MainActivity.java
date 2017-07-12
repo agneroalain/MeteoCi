@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String CURRENT_TAG = "principal";
+    public static  Double LAT = 5.3094;
+    public static  Double LNG = -4.0198;
     ListView listmenu;
     ArrayList<String> listStringMenu = new ArrayList<String>();
     ArrayList<Localisation> localisationMenu=new ArrayList<Localisation>();
@@ -135,13 +137,23 @@ public class MainActivity extends AppCompatActivity
 
         listmenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int pos, long id) {
-                Toast.makeText(getApplication(),"Source de donnée manquante",Toast.LENGTH_LONG).show();
 
+                LAT = getLat(pos);
+                LNG = getLong(pos);
+
+                Fragment frg = null;
+                frg = getSupportFragmentManager().findFragmentByTag(CURRENT_TAG);
+                final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.detach(frg);
+                ft.attach(frg);
+                ft.commit();
+                Toast.makeText(getApplication(),"Source de donnée manquante" + LAT + " " + LNG,Toast.LENGTH_LONG).show();
                 drawer.closeDrawers();
             }
         });
 
         Button btnpos=(Button)findViewById(R.id.maposition);
+        Localisation localisation = new Localisation();
         btnpos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -303,6 +315,16 @@ public class MainActivity extends AppCompatActivity
         }
 
     }
+
+
+    //recuperation des coordonées de la ville cliquée !
+    public double getLat(int index){
+        return  this.localisationMenu.get(index).getLatitude();
+    }
+    public double getLong(int index){
+        return  this.localisationMenu.get(index).getLongitude();
+    }
+
 //    public class MenuAdapter extends ArrayAdapter<Localisation>
 //    {
 //        Context context;

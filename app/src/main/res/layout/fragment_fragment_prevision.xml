@@ -1,10 +1,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bck_prevision"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bravaafreeca.meteoci.FragmentPrevision"
     android:background="@drawable/abidjan2"
-    android:id="@+id/bck_prevision">
+    android:padding="10dp"
+    tools:context="com.bravaafreeca.meteoci.FragmentPrevision">
 
     <!-- TODO: Update blank fragment layout -->
 

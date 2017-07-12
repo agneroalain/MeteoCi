@@ -113,7 +113,7 @@ public class FragmentPrevision extends Fragment {
             }
         }
         DownloadPrevision getPrevision = new DownloadPrevision();
-        getPrevision.execute("http://api.openweathermap.org/data/2.5/forecast/daily?lat=5.3096600&lon=-4.0126600&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr");
+        getPrevision.execute("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+ MainActivity.LAT +"&lon="+ MainActivity.LNG +"&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr");
         chargerList();
 
         return rootView;

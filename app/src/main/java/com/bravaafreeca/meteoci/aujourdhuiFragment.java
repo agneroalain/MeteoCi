@@ -1,6 +1,7 @@
 package com.bravaafreeca.meteoci;
 
 import android.Manifest;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,8 +41,8 @@ public class aujourdhuiFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     public static View rootView;
-    public static Double lng = -4.0126600;
-    public static Double lat = 5.3096600;
+    public static Double lng;
+    public static Double lat;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -71,11 +73,11 @@ public class aujourdhuiFragment extends Fragment {
      * @return A new instance of fragment aujourdhuiFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static aujourdhuiFragment newInstance(String param1, String param2) {
+    public static aujourdhuiFragment newInstance(Double param1, Double param2) {
         aujourdhuiFragment fragment = new aujourdhuiFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putDouble(ARG_PARAM1, MainActivity.LAT);
+        args.putDouble(ARG_PARAM2, MainActivity.LNG);
         fragment.setArguments(args);
         return fragment;
     }
@@ -125,14 +127,16 @@ public class aujourdhuiFragment extends Fragment {
         }
         else{
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
+                background.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan3));
             }
             conseil.setTextColor(Color.parseColor("#FFFFFF"));
         }
 
 
             DownloadTask task = new DownloadTask();
-                task.execute("http://api.openweathermap.org/data/2.5/weather?lat="+ lat +"&lon="+ lng +"&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
 
+                task.execute("http://api.openweathermap.org/data/2.5/weather?lat="+ MainActivity.LAT +"&lon="+ MainActivity.LNG +"&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
+                Log.d("LIEN","http://api.openweathermap.org/data/2.5/weather?lat="+ MainActivity.LAT +"&lon="+ MainActivity.LNG +"&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
         return rootView;
     }
 
@@ -166,4 +170,6 @@ public class aujourdhuiFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

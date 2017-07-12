@@ -35,12 +35,17 @@ public class fragmentDemain extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    public static TextView ville_textview;
-    public static TextView temp_textview;
-    public static TextView desc_textview;
+    public static TextView ville_textview_demain;
+    public static TextView temp_textview_demain;
+    public static TextView desc_textview_demain;
+    public static TextView pa_demain;
+    public static TextView vv_demain;
+    public static TextView humidity_demain;
 
-    public static ImageView image;
-    public  static FrameLayout background;
+
+
+    public static ImageView image_demain;
+    public  static FrameLayout background_demain;
 
     private OnFragmentInteractionListener mListener;
 
@@ -80,38 +85,42 @@ public class fragmentDemain extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        rootView = inflater.inflate(R.layout.fragment_aujourdhui,container,false);
+        rootView = inflater.inflate(R.layout.fragment_fragment_demain,container,false);
 
 
-        ville_textview = (TextView) rootView.findViewById(R.id.textView_Ville);
-        temp_textview = (TextView) rootView.findViewById(R.id.textView_Temp);
-        desc_textview = (TextView) rootView.findViewById(R.id.textView_description);
-        image = (ImageView) rootView.findViewById(R.id.image);
+        ville_textview_demain = (TextView) rootView.findViewById(R.id.textView_Ville_Demain);
+        pa_demain = (TextView) rootView.findViewById(R.id.pa_demain);
+        humidity_demain = (TextView) rootView.findViewById(R.id.humidity_demain);
+        vv_demain = (TextView) rootView.findViewById(R.id.vv_demain);
+        temp_textview_demain = (TextView) rootView.findViewById(R.id.textView_TempDemain);
+        desc_textview_demain = (TextView) rootView.findViewById(R.id.textView_descriptionDemain);
+        image_demain = (ImageView) rootView.findViewById(R.id.image_demain);
 
 
         Calendar c = Calendar.getInstance();
         int seconds = c.get(Calendar.SECOND);
         int hour = c.get(Calendar.HOUR_OF_DAY);
-        background = (FrameLayout) rootView.findViewById(R.id.bck_today);
+        background_demain = (FrameLayout) rootView.findViewById(R.id.bck_demain);
         if(hour > 6 && hour < 12 ){
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-                background.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan2));
+                background_demain.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan2));
             }
             //background.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.abidjan2, null));
         }
         else if(hour > 12 && hour < 18 ){
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-                background.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan));
+                background_demain.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan));
             }
         }
         else{
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
+                background_demain.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.abidjan3));
             }
         }
 
 
-        DownloadTask task = new DownloadTask();
-        task.execute("http://api.openweathermap.org/data/2.5/weather?lat=5.3096600&lon=-4.0126600&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
+        DownloadDemain task_demain = new DownloadDemain();
+        task_demain.execute("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+ MainActivity.LAT +"&lon="+ MainActivity.LNG +"&cnt=10&appid=f2df44ac14f938f5a4ad68434f12d383&lang=fr&units=metric");
 
         return rootView;
         // Inflate the layout for this fragment
